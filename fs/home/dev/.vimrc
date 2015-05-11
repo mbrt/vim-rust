@@ -19,6 +19,7 @@ Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'phildawes/racer'
+Plugin 'rust-lang/rust.vim'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required

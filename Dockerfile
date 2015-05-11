@@ -5,7 +5,8 @@ ADD fs/ /
 
 # install pagkages
 RUN apt-get update                                                      && \
-    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags         && \
+    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags            \
+        mercurial git                                                   && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     cd /tmp                                                             && \
@@ -25,7 +26,7 @@ RUN apt-get update                                                      && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
     chown -R dev:dev /home/dev /go                                      && \
 # cleanup
-    apt-get remove -y ncurses-dev                                       && \
+    apt-get remove -y ncurses-dev mercurial                             && \
     apt-get autoremove -y                                               && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -46,8 +47,10 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git  && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && \
     git clone --depth 1 https://github.com/phildawes/racer.git          && \
+    git clone --depth 1 git@github.com:rust-lang/rust.vim.git           && \
     vim +PluginInstall +qall                                            && \
 # cleanup
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git  \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git          \
-        undotree/.git vim-easymotion/.git nerdcommenter/.git racer/.git
+        undotree/.git vim-easymotion/.git nerdcommenter/.git racer/.git    \
+        rust.vim/.git
