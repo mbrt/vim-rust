@@ -47,7 +47,7 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git  && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && \
     git clone --depth 1 https://github.com/phildawes/racer.git          && \
-    git clone --depth 1 git@github.com:rust-lang/rust.vim.git           && \
+    git clone --depth 1 https://github.com/rust-lang/rust.vim.git       && \
     vim +PluginInstall +qall                                            && \
 # cleanup
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git  \
