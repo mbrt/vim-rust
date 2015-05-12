@@ -19,7 +19,7 @@ RUN apt-get update                                                      && \
     make install                                                        && \
 # build and install racer
     cd /tmp                                                             && \
-    git clone git@github.com:phildawes/racer.git                        && \
+    git clone https://github.com/phildawes/racer.git                    && \
     cd racer && cargo build --release                                   && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
