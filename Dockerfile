@@ -1,4 +1,4 @@
-FROM schickling/rust
+FROM jimmycuadra/rust
 MAINTAINER Michele Bertasi
 
 ADD fs/ /
@@ -24,7 +24,7 @@ RUN apt-get update                                                      && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
-    chown -R dev:dev /home/dev /go                                      && \
+    chown -R dev:dev /home/dev                                          && \
 # cleanup
     apt-get remove -y ncurses-dev mercurial                             && \
     apt-get autoremove -y                                               && \
