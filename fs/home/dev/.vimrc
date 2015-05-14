@@ -39,6 +39,10 @@ colorscheme molokai
 " plugin customizations
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
 
 " racer
 let g:racer_cmd = "/usr/local/bin/racer"
