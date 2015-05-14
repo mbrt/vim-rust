@@ -41,8 +41,8 @@ colorscheme molokai
 let g:neocomplete#enable_at_startup = 1
 
 " racer
-let g:racer_cmd = "<path-to-racer>/target/release/racer"
-let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
+let g:racer_cmd = "/usr/local/bin/racer"
+let $RUST_SRC_PATH="/usr/local/src/rust/src/"
 
 " vim-airline
 set laststatus=2

@@ -1,4 +1,4 @@
-FROM jimmycuadra/rust
+FROM mbrt/rust
 MAINTAINER Michele Bertasi
 
 ADD fs/ /
@@ -21,14 +21,16 @@ RUN apt-get update                                                      && \
     cd /tmp                                                             && \
     git clone https://github.com/phildawes/racer.git                    && \
     cd racer && cargo build --release                                   && \
+    cp target/release/racer /usr/local/bin/racer                        && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
-    chown -R dev:dev /home/dev                                          && \
+    chown -R dev:dev /home/dev /source                                  && \
 # cleanup
     apt-get remove -y ncurses-dev mercurial                             && \
     apt-get autoremove -y                                               && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    apt-get clean                                                       && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER dev
 ENV HOME /home/dev
