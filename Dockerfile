@@ -33,7 +33,8 @@ RUN apt-get update                                                      && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER dev
-ENV HOME /home/dev
+ENV HOME=/home/dev                                                         \
+    RUST_SRC_PATH=/usr/local/src/rust/src/
 
 # install vim plugins
 RUN mkdir -p ~/.vim/bundle                                              && \

@@ -42,7 +42,6 @@ let g:neocomplete#enable_at_startup = 1
 
 " racer
 let g:racer_cmd = "/usr/local/bin/racer"
-let $RUST_SRC_PATH="/usr/local/src/rust/src/"
 
 " vim-airline
 set laststatus=2
