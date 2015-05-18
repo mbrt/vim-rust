@@ -11,8 +11,8 @@ If you want to use `gdb` from within the image, you can use the following workar
 * Install the `apparmor-utils` package: `sudo apt-get install apparmor-utils`
 * Enable the complain mode for the docker apparmor config: `sudo aa-complain /etc/apparmor.d/docker`
 
-This is needed *at every reboot*. If you want to persist this setting, simply put it in `/etc/rc.local`:
+This is needed *at every reboot*. If you want to persist this setting, simply edit `/etc/rc.local` as root and add this line before `exit 0`:
 
-`sudo echo "aa-complain /etc/apparmor.d/docker" >> /etc/rc.local`.
+`aa-complain /etc/apparmor.d/docker`
 
 See [StevenVanAcker comment](https://github.com/docker/docker/issues/7276#issuecomment-50436671) on issue #7276 of Docker.
