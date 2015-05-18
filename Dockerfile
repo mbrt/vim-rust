@@ -34,6 +34,7 @@ RUN apt-get update                                                      && \
 
 USER dev
 ENV HOME=/home/dev                                                         \
+    USER=dev                                                               \
     RUST_SRC_PATH=/usr/local/src/rust/src/
 
 # install vim plugins
