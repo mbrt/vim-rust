@@ -1,5 +1,6 @@
 # vim-rust
 Docker image that bundles [Rust lang](http://www.rust-lang.org/) (with `rustc`, `cargo`) and the following vim plugins:
+
 * [racer](https://github.com/phildawes/racer)
 * [rust.vim](https://github.com/rust-lang/rust.vim)
 * [tagbar](https://github.com/majutsushi/tagbar)
