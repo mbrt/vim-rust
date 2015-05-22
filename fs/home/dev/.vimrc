@@ -53,6 +53,21 @@ let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'dark'
 
+" tagbar
+let g:tagbar_type_rust = {
+    \ 'ctagstype' : 'rust',
+    \ 'kinds' : [
+        \'T:types,type definitions',
+        \'f:functions,function definitions',
+        \'g:enum,enumeration names',
+        \'s:structure names',
+        \'m:modules,module names',
+        \'c:consts,static constants',
+        \'t:traits,traits',
+        \'i:impls,trait implementations',
+    \]
+    \}
+
 " shortcuts remap
 nmap <F2> :tabnew<CR>
 nmap <F3> :tabclose<CR>
