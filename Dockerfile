@@ -6,7 +6,7 @@ ADD fs/ /
 # install pagkages
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags            \
-        mercurial git make                                              && \
+        mercurial git make bash-completion                              && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     cd /tmp                                                             && \
