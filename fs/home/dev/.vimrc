@@ -44,6 +44,9 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
 
+" rust.vim
+au FileType rust compiler cargo
+
 " racer
 let g:racer_cmd = "/usr/local/bin/racer"
 
