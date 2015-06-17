@@ -72,6 +72,12 @@ let g:tagbar_type_rust = {
     \}
 
 " shortcuts remap
+" rust specific
+autocmd FileType rust nmap <Leader>r :make run<CR>
+autocmd FileType rust nmap <Leader>b :make build<CR>
+autocmd FileType rust nmap <Leader>t :make test<CR>
+
+" generic
 nmap <F2> :tabnew<CR>
 nmap <F3> :tabclose<CR>
 nmap <F5> :UndotreeToggle<CR>
