@@ -50,6 +50,7 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/mbbill/undotree.git          && \
     git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git  && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && \
+    git clone --depth 1 https://github.com/scrooloose/syntastic.git     && \
     git clone --depth 1 https://github.com/phildawes/racer.git          && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git       && \
     vim +PluginInstall +qall                                            && \

@@ -18,6 +18,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
 Plugin 'phildawes/racer'
 Plugin 'rust-lang/rust.vim'
 
