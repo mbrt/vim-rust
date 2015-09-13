@@ -39,7 +39,7 @@ This is needed *at every reboot*. If you want to persist this setting, simply ed
 
 See [StevenVanAcker comment](https://github.com/docker/docker/issues/7276#issuecomment-50436671) on issue #7276 of Docker.
 
-### Avoid updating the rust registry every time a new container is started
+### Avoid updating the cargo registry every time a new container is started
 
 Every time you start this image and run `cargo build`, cargo updates its registry, download your project dependencies and build them. This process is repeated every time you restart the container and could be annoying, especially if you start the image without an internet connection.
 
