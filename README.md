@@ -24,6 +24,9 @@ docker run --rm -tiv `pwd`:/source mbrt/vim-rust
 You can also debug by using `rust-gdb` command. If you have problems with the debugger, see the *Troubleshooting* section.
 
 ## Troubleshooting
+
+### Debugging inside the container
+
 Default Docker installation (as of version 1.5.0 on Ubuntu 14.04) have problems with `gdb` (e.g. breakpoints does not work).
 If you want to use `gdb` from within the image, you can use the following workaround (under Ubuntu):
 
@@ -35,3 +38,37 @@ This is needed *at every reboot*. If you want to persist this setting, simply ed
 `aa-complain /etc/apparmor.d/docker`
 
 See [StevenVanAcker comment](https://github.com/docker/docker/issues/7276#issuecomment-50436671) on issue #7276 of Docker.
+
+### Avoid updating the rust registry every time a new container is started
+
+Every time you start this image and run `cargo build`, cargo updates its registry, download your project dependencies and build them. This process is repeated every time you restart the container and could be annoying, especially if you start the image without an internet connection.
+
+A first possibility to avoid that is to cache the `.cargo` directory in your host machine. Change the `run` command in this way:
+
+```
+cd your/rust/workspace
+mkdir ~/.cargo
+docker run --rm -ti -v ~/.cargo:/home/dev/.cargo -v `pwd`:/source mbrt/vim-rust
+```
+
+Another possibility is to create a new image to reuse later, with cached registry:
+
+```
+# on host
+cd your/rust/workspace
+docker run -tiv `pwd`:/source mbrt/vim-rust
+# inside container
+cargo update
+exit
+# on host again
+# identify the container id
+docker ps -a
+docker commit <container-id> myself/myimage
+```
+
+From now on, use your new image:
+
+```
+cd your/rust/workspace
+docker run --rm -tiv `pwd`:/source myself/myimage
+```
