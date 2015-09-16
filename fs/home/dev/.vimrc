@@ -19,6 +19,7 @@ Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'milkypostman/vim-togglelist'
 Plugin 'phildawes/racer'
 Plugin 'rust-lang/rust.vim'
 
