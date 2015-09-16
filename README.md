@@ -13,6 +13,7 @@ Docker image that bundles [Rust lang](http://www.rust-lang.org/) (with `rustc`, 
 * [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 * [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [syntastic](https://github.com/scrooloose/syntastic)
+* [vim-togglelist](https://github.com/milkypostman/vim-togglelist)
 
 ## Usage
 Run this image from within your workspace. You can than edit your project using `vim` and usual rust commands: `cargo build`, `cargo test`, etc. 

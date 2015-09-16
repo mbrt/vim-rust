@@ -72,6 +72,9 @@ let g:tagbar_type_rust = {
     \]
     \}
 
+" togglelist
+let g:toggle_list_copen_command = 'botright copen'
+
 " shortcuts remap
 " rust specific
 autocmd FileType rust nmap <Leader>r :make run<CR>
@@ -81,6 +84,8 @@ autocmd FileType rust nmap <Leader>t :make test<CR>
 " generic
 nmap <F2> :tabnew<CR>
 nmap <F3> :tabclose<CR>
+nmap <F3> :tabclose<CR>
+nmap <F4> :call ToggleQuickfixList()<CR> 
 nmap <F5> :UndotreeToggle<CR>
 nmap <F7> :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
