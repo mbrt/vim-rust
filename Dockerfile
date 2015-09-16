@@ -57,5 +57,5 @@ RUN mkdir -p ~/.vim/bundle                                              && \
 # cleanup
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git  \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git          \
-        undotree/.git vim-easymotion/.git nerdcommenter/.git racer/.git    \
-        rust.vim/.git
+        undotree/.git vim-easymotion/.git nerdcommenter/.git               \
+        syntastic/.git racer/.git rust.vim/.git
