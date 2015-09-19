@@ -55,6 +55,8 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/phildawes/racer.git              && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
     vim +PluginInstall +qall                                                && \
+# set vim as git editor
+    git config --global core.editor vim                                     && \
 # cleanup
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git      \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
