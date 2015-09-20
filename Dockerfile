@@ -10,6 +10,8 @@ RUN apt-get update                                                          && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                             && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so         && \
     cd /tmp                                                                 && \
+# bash completion for cargo
+    cp /usr/local/etc/bash_completion.d/* /etc/bash_completion.d/           && \
 # build and install vim
     hg clone https://code.google.com/p/vim/                                 && \
     cd vim                                                                  && \
