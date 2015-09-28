@@ -24,6 +24,8 @@ RUN apt-get update                                                          && \
     git clone https://github.com/phildawes/racer.git                        && \
     cd racer && cargo build --release                                       && \
     cp target/release/racer /usr/local/bin/racer                            && \
+# source dir
+    mkdir /source                                                           && \
 # add dev user
     adduser dev --disabled-password --gecos ""                              && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers         && \
@@ -64,3 +66,6 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
         syntastic/.git vim-togglelist/.git racer/.git rust.vim/.git
+
+VOLUME ["/source"]
+WORKDIR /source
