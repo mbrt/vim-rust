@@ -20,6 +20,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'milkypostman/vim-togglelist'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'phildawes/racer'
 Plugin 'rust-lang/rust.vim'
 
@@ -76,6 +77,9 @@ let g:tagbar_type_rust = {
 
 " togglelist
 let g:toggle_list_copen_command = 'botright copen'
+
+" ctrlp
+let g:ctrlp_custom_ignore = '\v[\/]target\/(debug|release)$'
 
 " shortcuts remap
 " rust specific

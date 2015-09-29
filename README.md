@@ -14,6 +14,7 @@ Docker image that bundles [Rust lang](http://www.rust-lang.org/) (with `rustc`, 
 * [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [vim-togglelist](https://github.com/milkypostman/vim-togglelist)
+* [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 
 ## Usage
 Run this image from within your workspace. You can than edit your project using `vim` and usual rust commands: `cargo build`, `cargo test`, etc. 
