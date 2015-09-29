@@ -36,6 +36,7 @@ set cursorline
 set scrolloff=999
 set encoding=utf-8
 set hidden
+set incsearch
 colorscheme molokai
 
 " plugin customizations
