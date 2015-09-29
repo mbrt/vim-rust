@@ -85,9 +85,11 @@ autocmd FileType rust nmap <Leader>t :make test<CR>
 " generic
 nmap <F2> :tabnew<CR>
 nmap <F3> :tabclose<CR>
-nmap <F4> :call ToggleQuickfixList()<CR> 
+nmap <F4> :call ToggleQuickfixList()<CR>
 nmap <F5> :UndotreeToggle<CR>
 nmap <F7> :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
+nmap <C-Down> :bprev<CR>
+nmap <C-Up> :bnext<CR>
