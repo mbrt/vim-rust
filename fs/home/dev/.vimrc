@@ -98,3 +98,7 @@ nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 nmap <C-Down> :bprev<CR>
 nmap <C-Up> :bnext<CR>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
