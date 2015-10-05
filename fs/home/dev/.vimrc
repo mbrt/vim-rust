@@ -75,6 +75,11 @@ let g:tagbar_type_rust = {
     \]
     \}
 
+" nerdcommenter
+let g:NERDCustomDelimiters = {
+        \ 'rust': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' }
+    \ }
+
 " togglelist
 let g:toggle_list_copen_command = 'botright copen'
 
