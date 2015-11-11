@@ -64,7 +64,6 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/ctrlpvim/ctrlp.vim               && \
     git clone --depth 1 https://github.com/phildawes/racer.git              && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
-    git clone --depth 1 https://github.com/Chiel92/vim-autoformat.git       && \
     vim +PluginInstall +qall                                                && \
 # set vim as git editor
     git config --global core.editor vim                                     && \
@@ -73,7 +72,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
         syntastic/.git vim-togglelist/.git ctrlp.vim/.git racer/.git           \
-        rust.vim/.git vim-autoformat/.git
+        rust.vim/.git
 
 VOLUME ["/source"]
 WORKDIR /source

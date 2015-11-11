@@ -23,7 +23,6 @@ Plugin 'milkypostman/vim-togglelist'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'phildawes/racer'
 Plugin 'rust-lang/rust.vim'
-Plugin 'Chiel92/vim-autoformat'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,17 +86,11 @@ let g:toggle_list_copen_command = 'botright copen'
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]target\/(debug|release)$'
 
-" vim-autoformat
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-autocmd FileType rust au BufWrite * :Autoformat
-
 " shortcuts remap
 " rust specific
 autocmd FileType rust nmap <Leader>r :make run<CR>
 autocmd FileType rust nmap <Leader>b :make build<CR>
 autocmd FileType rust nmap <Leader>t :make test<CR>
-autocmd FileType rust nmap <Leader>f :Autoformat<CR>
 
 " generic
 nmap <F2> :tabnew<CR>
