@@ -24,6 +24,11 @@ RUN apt-get update                                                          && \
     git clone https://github.com/phildawes/racer.git                        && \
     cd racer && cargo build --release                                       && \
     cp target/release/racer /usr/local/bin/racer                            && \
+# build and install rustfmt
+    cd /tmp                                                                 && \
+    git clone https://github.com/nrc/rustfmt                                && \
+    cd rustfmt && cargo build --release                                     && \
+    cp target/release/rustfmt /usr/local/bin/rustfmt                        && \
 # source dir
     mkdir /source                                                           && \
 # add dev user
@@ -34,7 +39,7 @@ RUN apt-get update                                                          && \
     apt-get remove -y ncurses-dev mercurial                                 && \
     apt-get autoremove -y                                                   && \
     apt-get clean                                                           && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cargo
 
 USER dev
 ENV HOME=/home/dev                                                             \
@@ -59,6 +64,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/ctrlpvim/ctrlp.vim               && \
     git clone --depth 1 https://github.com/phildawes/racer.git              && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
+    git clone --depth 1 https://github.com/Chiel92/vim-autoformat.git       && \
     vim +PluginInstall +qall                                                && \
 # set vim as git editor
     git config --global core.editor vim                                     && \
@@ -67,7 +73,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
         syntastic/.git vim-togglelist/.git ctrlp.vim/.git racer/.git           \
-        rust.vim/.git
+        rust.vim/.git vim-autoformat/.git
 
 VOLUME ["/source"]
 WORKDIR /source
