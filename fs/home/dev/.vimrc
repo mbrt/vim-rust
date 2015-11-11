@@ -40,6 +40,9 @@ set hidden
 set incsearch
 colorscheme molokai
 
+" rust customizations
+autocmd BufNewFile,BufRead *.rs set formatprg=rustfmt
+
 " plugin customizations
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
