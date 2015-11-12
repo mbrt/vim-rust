@@ -26,7 +26,7 @@ RUN apt-get update                                                          && \
     cp target/release/racer /usr/local/bin/racer                            && \
 # build and install rustfmt
     cd /tmp                                                                 && \
-    git clone https://github.com/nrc/rustfmt                                && \
+    git clone https://github.com/rust-lang-nursery/rustfmt                  && \
     cd rustfmt && cargo build --release                                     && \
     cp target/release/rustfmt /usr/local/bin/rustfmt                        && \
 # source dir
