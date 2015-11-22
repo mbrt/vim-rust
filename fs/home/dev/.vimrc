@@ -21,7 +21,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'phildawes/racer'
+Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 
 " all of your Plugins must be added before the following line

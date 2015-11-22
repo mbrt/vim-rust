@@ -62,7 +62,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/scrooloose/syntastic.git         && \
     git clone --depth 1 https://github.com/milkypostman/vim-togglelist.git  && \
     git clone --depth 1 https://github.com/ctrlpvim/ctrlp.vim               && \
-    git clone --depth 1 https://github.com/phildawes/racer.git              && \
+    git clone --depth 1 https://github.com/racer-rust/vim-racer.git         && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
     vim +PluginInstall +qall                                                && \
 # set vim as git editor
@@ -71,7 +71,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git      \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
-        syntastic/.git vim-togglelist/.git ctrlp.vim/.git racer/.git           \
+        syntastic/.git vim-togglelist/.git ctrlp.vim/.git vim-racer/.git       \
         rust.vim/.git
 
 VOLUME ["/source"]
