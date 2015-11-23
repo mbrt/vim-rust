@@ -62,6 +62,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/scrooloose/syntastic.git         && \
     git clone --depth 1 https://github.com/milkypostman/vim-togglelist.git  && \
     git clone --depth 1 https://github.com/ctrlpvim/ctrlp.vim               && \
+    git clone --depth 1 https://github.com/cespare/vim-toml.git             && \
     git clone --depth 1 https://github.com/phildawes/racer.git              && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
     vim +PluginInstall +qall                                                && \
@@ -71,8 +72,8 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     rm -rf Vundle.vim/.git tagbar/.git neocomplete.vim/.git nerdtree/.git      \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
-        syntastic/.git vim-togglelist/.git ctrlp.vim/.git racer/.git           \
-        rust.vim/.git
+        syntastic/.git vim-togglelist/.git ctrlp.vim/.git vim-toml/.git        \
+        racer/.git rust.vim/.git
 
 VOLUME ["/source"]
 WORKDIR /source
