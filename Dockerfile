@@ -26,7 +26,7 @@ RUN apt-get update                                                          && \
     cp target/release/racer /usr/local/bin/racer                            && \
 # build and install rustfmt
     cd /tmp                                                                 && \
-    git clone https://github.com/nrc/rustfmt                                && \
+    git clone https://github.com/rust-lang-nursery/rustfmt                  && \
     cd rustfmt && cargo build --release                                     && \
     cp target/release/rustfmt /usr/local/bin/rustfmt                        && \
 # source dir
@@ -63,7 +63,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
     git clone --depth 1 https://github.com/milkypostman/vim-togglelist.git  && \
     git clone --depth 1 https://github.com/ctrlpvim/ctrlp.vim               && \
     git clone --depth 1 https://github.com/cespare/vim-toml.git             && \
-    git clone --depth 1 https://github.com/phildawes/racer.git              && \
+    git clone --depth 1 https://github.com/racer-rust/vim-racer.git         && \
     git clone --depth 1 https://github.com/rust-lang/rust.vim.git           && \
     vim +PluginInstall +qall                                                && \
 # set vim as git editor
@@ -73,7 +73,7 @@ RUN mkdir -p ~/.vim/bundle                                                  && \
         vim-airline/.git vim-fugitive/.git vim-nerdtree-tabs/.git              \
         undotree/.git vim-easymotion/.git nerdcommenter/.git                   \
         syntastic/.git vim-togglelist/.git ctrlp.vim/.git vim-toml/.git        \
-        racer/.git rust.vim/.git
+        vim-racer/.git rust.vim/.git
 
 VOLUME ["/source"]
 WORKDIR /source
