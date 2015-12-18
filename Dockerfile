@@ -21,11 +21,11 @@ RUN apt-get update                                                          && \
     make install                                                            && \
 # build and install racer
     cargo install --git https://github.com/phildawes/racer.git              && \
-    cp /home/dev/.cargo/bin/racer /usr/local/bin/racer                      && \
+    cp /root/.cargo/bin/racer /usr/local/bin/racer                          && \
 # build and install rustfmt
     cargo install rustfmt                                                   && \
-    cp /home/dev/.cargo/bin/rustfmt /usr/local/bin/rustfmt                  && \
-    cp /home/dev/.cargo/bin/cargo-fmt /usr/local/bin/cargo-fmt              && \
+    cp /root/.cargo/bin/rustfmt /usr/local/bin/rustfmt                      && \
+    cp /root/.cargo/bin/cargo-fmt /usr/local/bin/cargo-fmt                  && \
 # source dir
     mkdir /source                                                           && \
 # add dev user
