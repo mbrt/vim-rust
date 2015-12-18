@@ -20,15 +20,12 @@ RUN apt-get update                                                          && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                                 && \
     make install                                                            && \
 # build and install racer
-    cd /tmp                                                                 && \
-    git clone https://github.com/phildawes/racer.git                        && \
-    cd racer && cargo build --release                                       && \
-    cp target/release/racer /usr/local/bin/racer                            && \
+    cargo install --git https://github.com/phildawes/racer.git              && \
+    cp /home/dev/.cargo/bin/racer /usr/local/bin/racer                      && \
 # build and install rustfmt
-    cd /tmp                                                                 && \
-    git clone https://github.com/rust-lang-nursery/rustfmt                  && \
-    cd rustfmt && cargo build --release                                     && \
-    cp target/release/rustfmt /usr/local/bin/rustfmt                        && \
+    cargo install rustfmt                                                   && \
+    cp /home/dev/.cargo/bin/rustfmt /usr/local/bin/rustfmt                  && \
+    cp /home/dev/.cargo/bin/cargo-fmt /usr/local/bin/cargo-fmt              && \
 # source dir
     mkdir /source                                                           && \
 # add dev user
