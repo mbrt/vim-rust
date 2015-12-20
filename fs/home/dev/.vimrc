@@ -90,6 +90,9 @@ let g:toggle_list_copen_command = 'botright copen'
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]target\/(debug|release)$'
 
+" yaml tabs
+autocmd FileType yaml :setlocal sw=2 ts=2 sts=2
+
 " shortcuts remap
 " rust specific
 autocmd FileType rust nmap <Leader>r :make run<CR>
