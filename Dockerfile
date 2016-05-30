@@ -6,14 +6,14 @@ ADD fs/ /
 # install pagkages
 RUN apt-get update                                                          && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags                \
-        mercurial git make bash-completion                                  && \
+        git make bash-completion                                            && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                             && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so         && \
     cd /tmp                                                                 && \
 # bash completion for cargo
     cp /usr/local/etc/bash_completion.d/* /etc/bash_completion.d/           && \
 # build and install vim
-    hg clone https://code.google.com/p/vim/                                 && \
+    git clone https://github.com/vim/vim.git                                && \
     cd vim                                                                  && \
     ./configure --with-features=huge --enable-luainterp                        \
         --enable-gui=no --without-x --prefix=/usr                           && \
@@ -33,7 +33,7 @@ RUN apt-get update                                                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers         && \
     chown -R dev:dev /home/dev /source                                      && \
 # cleanup
-    apt-get remove -y ncurses-dev mercurial                                 && \
+    apt-get remove -y ncurses-dev                                           && \
     apt-get autoremove -y                                                   && \
     apt-get clean                                                           && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cargo
